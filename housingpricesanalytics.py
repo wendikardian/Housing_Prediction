@@ -43,6 +43,9 @@ df.isnull().sum()
 Correlation of price with other features
 """
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 categorical_vars = ['mainroad', 'guestroom', 'basement', 'hotwaterheating', 'airconditioning', 'parking', 'prefarea', 'furnishingstatus']
 for var in categorical_vars:
     plt.figure(figsize=(10, 6))
@@ -218,15 +221,30 @@ df_encoded
 
 from sklearn.preprocessing import MinMaxScaler
 
+df_copy = df_encoded.copy()
 scaler = MinMaxScaler()
 numerical_list = ["area", "bedrooms", "price"]
 df_encoded[numerical_list] = scaler.fit_transform(df_encoded[numerical_list])
 df_encoded
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.figure(figsize=(12, 6))
+plt.subplot(1, 2, 1)
+sns.boxplot(data=df_copy[numerical_list], palette="Set3")
+plt.title('Box Plot Sebelum Normalisasi')
+
+plt.subplot(1, 2, 2)
+sns.boxplot(data=scaler.fit_transform(df_encoded[numerical_list]), palette="Set3")
+plt.title('Box Plot Setelah Normalisasi')
+
+plt.show()
+
 """## Split the Data"""
 
 from sklearn.model_selection import train_test_split
-
+import numpy as np
 np.random.seed(0)
 
 X = df_encoded.drop(["price"],axis =1)
