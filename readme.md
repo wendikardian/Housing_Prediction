@@ -5,7 +5,7 @@
 
 **Dibuat oleh : Wendi Kardian**
 
-Project Pertama dalam Predictive Analytics untuk memenuhi submission project dari Dicoding, dalam kelas Machine Learning Terapan. Project ini membuat model machine learning yang dapat memprediksi harga rumah berdasarkan features tertentu
+
 
 ![enter image description here](https://www.dijones.com.au/-/media/project/dijones/corporate/library/news/blog-article-images/october-2023/understanding-the-housing-policy-landscape-header.jpg?rev=f273f5da59404f02869c35194327266f)
 Gambar 1. Miniatur Housing
